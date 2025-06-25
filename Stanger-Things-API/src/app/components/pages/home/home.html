@@ -1,0 +1,42 @@
+<main>
+    <section class="d-flex justify-content-center imgContainer">
+        <h2 class="visually-hidden">Poster</h2>
+        <div class="blurry-wrapper">
+        </div>
+    </section>
+    <section class="d-flex justify-content-around p-3 info-container">
+        <h2 class="visually-hidden">Info about the season</h2>
+        <div class="d-flex justify-content-center flex-column gap-3 w-50 text-white information">
+            <h1>NEW SEASON COMING SOON!</h1>
+            <p>Get ready to dive back into the Upside Down—Stranger Things is coming with a brand-new season! Join
+                Eleven, Mike, Dustin, and the rest of the gang as they face darker mysteries, unexpected alliances, and
+                pulse-pounding twists that will keep you on the edge of your seat. Packed with heart, humor, and
+                spine-tingling suspense, this season promises to up the stakes like never before. Don’t miss a single
+                moment when it drops—you’ll want to binge it as soon as it’s here!</p>
+            <button type="button" class="btn mx-auto text-white">See more information</button>
+        </div>
+        <div>
+            <img [ngSrc]="vecnaGif" alt="" width="500" height="100" class="img-fluid vecna-gif">
+        </div>
+    </section>
+    <section class="characters-wrapper">
+  <h2 class="visually-hidden">Characters</h2>
+  <div class="character-box"
+       *ngFor="let c of characters"
+       (mouseenter)="hoveredCharacter = c"
+       (mouseleave)="hoveredCharacter = null">
+
+    <img [ngSrc]="c.photo" alt="{{ c.name }}" width="290" height="600" class="img-fluid" />
+
+    <div class="info-box" *ngIf="hoveredCharacter === c">
+      <h2>{{ c.name }}</h2>
+      <div class="aliases-characters">
+        <h3>Also known as:</h3>
+        <p>{{ c.aliases.join(', ') }}</p>
+        <button type="button" class="btn">Show more info</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>

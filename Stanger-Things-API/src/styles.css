@@ -1,0 +1,8 @@
+*{
+    font-family: "Bebas Neue", sans-serif;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(circle,rgba(207, 29, 56, 1) 11%, rgba(163, 36, 36, 1) 64%, rgba(20, 17, 17, 1) 100%);
+}
